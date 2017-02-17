@@ -1,2 +1,12 @@
-django==1.10
-https://github.com/juanifioren/django-oidc-provider/archive/v0.4.x.zip
+appdirs==1.4.0
+Django==1.10
+django-oidc-provider==0.4.4
+future==0.16.0
+ldap3==2.2.1
+packaging==16.8
+pyasn1==0.2.2
+pycryptodomex==3.4.3
+pyjwkest==1.3.0
+pyparsing==2.1.10
+requests==2.13.0
+six==1.10.0
