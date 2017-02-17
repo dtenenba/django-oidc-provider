@@ -2,9 +2,7 @@ from django.contrib.auth import views as auth_views
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.generic import TemplateView
-import IPython # removeme
 
-# admin.site.has_permission = lambda r: IPython.embed() #r.user.username == 'dtenenba'
 
 
 urlpatterns = [
