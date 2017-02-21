@@ -9,37 +9,37 @@ RUN apt-get -yy update
 
 RUN apt-get install -y apache2 python3 python3-pip git curl unzip libapache2-mod-wsgi-py3
 
-RUN pip3 install --upgrade pip # (be sure and run pip3 though, not pip)
+RUN pip3 install --upgrade pip
 
-RUN pip3 install virtualenvwrapper
+# RUN pip3 install virtualenvwrapper
 
-RUN mkdir /envs
+# RUN mkdir /envs
 
-RUN export WORKON_HOME=/envs
+# RUN export WORKON_HOME=/envs
 
-RUN export VIRTUALENVWRAPPER_PYTHON=$(which python3)
+# RUN export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 
 # does export work? or do you need env? TODO which works and
 # which can be removed?
 
-ENV WORKON_HOME=/envs
-ENV VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+# ENV WORKON_HOME=/envs
+# ENV VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 
-RUN . /usr/local/bin/virtualenvwrapper.sh
+# RUN . /usr/local/bin/virtualenvwrapper.sh
 
-RUN mkvirtualenv django-oidc-provider
+# RUN mkvirtualenv django-oidc-provider
 
 RUN git clone https://github.com/dtenenba/hutch-oidc-provider.git
 
 RUN cd hutch-oidc-provider/example_project
 
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
-RUN python manage.py migrate
+RUN python3 manage.py migrate
 
-RUN python manage.py creatersakey
+RUN python3 manage.py creatersakey
 
-RUN python manage.py collectstatic --noinput
+RUN python3 manage.py collectstatic --noinput
 
 # set up db perms:
 

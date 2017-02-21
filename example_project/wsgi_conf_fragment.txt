@@ -12,7 +12,7 @@ Alias /static /hutch-oidc-provider/example_project/static
     </Directory>
 
 
-    WSGIDaemonProcess myapp python-home=/envs/django-oidc-provider python-path=/hutch-oidc-provider/example_project
+    WSGIDaemonProcess myapp python-home=/usr python-path=/hutch-oidc-provider/example_project
     WSGIProcessGroup myapp
     WSGIScriptAlias / /hutch-oidc-provider/example_project/myapp/wsgi.py
 
