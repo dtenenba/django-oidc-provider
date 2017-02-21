@@ -1,0 +1,16 @@
+
+    <Directory /hutch-oidc-provider/example_project/myapp/>
+        <Files wsgi.py>
+            Require all granted
+        </Files>
+    </Directory>
+
+
+    WSGIDaemonProcess myapp python-home=/envs/django-oidc-provider python-path=/hutch-oidc-provider/example_project
+    WSGIProcessGroup myapp
+    WSGIScriptAlias / /hutch-oidc-provider/example_project/myapp/wsgi.py
+
+
+
+	</VirtualHost>
+</IfModule>

@@ -5,7 +5,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 SECRET_KEY = 'c14d549c574e4d8cf162404ef0b04598'
 
-DEBUG = True
+DEBUG = False # TODO: change this to a conditional that's True when developing
 
 TEMPLATE_DEBUG = False
 
