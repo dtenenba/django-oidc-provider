@@ -1,4 +1,10 @@
 
+
+Alias /static /hutch-oidc-provider/example_project/static
+ <Directory /hutch-oidc-provider/example_project/static>
+     Require all granted
+ </Directory>
+
     <Directory /hutch-oidc-provider/example_project/myapp/>
         <Files wsgi.py>
             Require all granted
