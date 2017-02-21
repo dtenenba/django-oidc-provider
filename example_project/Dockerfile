@@ -73,7 +73,7 @@ RUN cp gd_bundle-g2-g1.crt /etc/ssl/certs
 
 RUN cp fhcrc.org.key /etc/ssl/private
 
-chmod 0400 /etc/ssl/private/fhcrc.org.key
+RUN chmod 0400 /etc/ssl/private/fhcrc.org.key
 
 RUN cd /etc/apache2/sites-available
 
