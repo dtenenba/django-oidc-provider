@@ -33,6 +33,9 @@ RUN git clone https://github.com/dtenenba/hutch-oidc-provider.git
 
 RUN cd hutch-oidc-provider/example_project
 
+WORKDIR /hutch-oidc-provider/example_project
+
+
 RUN pip3 install -r requirements.txt
 
 RUN python3 manage.py migrate
@@ -57,9 +60,13 @@ RUN service apache2 restart
 
 RUN cd /etc/apache2/sites-enabled
 
+WORKDIR /etc/apache2/sites-enabled
+
 RUN ln -s ../sites-available/default-ssl.conf .
 
 RUN cd /tmp
+
+WORKDIR /tmp
 
 RUN curl -O http://dist.fhcrc.org/wildcard2014/fhcrc-wildcard-apache.zip
 
@@ -76,6 +83,8 @@ RUN cp fhcrc.org.key /etc/ssl/private
 RUN chmod 0400 /etc/ssl/private/fhcrc.org.key
 
 RUN cd /etc/apache2/sites-available
+
+WORKDIR /etc/apache2/sites-available
 
 RUN sed -i.bak -r "s#/etc/ssl/certs/ssl-cert-snakeoil.pem#/etc/ssl/certs/2b497ffb67edc8.crt#" default-ssl.conf
 
@@ -97,6 +106,8 @@ RUN cat /tmp/wsgi_conf_fragment.txt >> default-ssl.conf
 
 # make sure the apache2 daemon is off before we turn it on in the foreground:
 RUN service apache2 stop
+
+WORKDIR /
 
 # this needs to be the last line in the Dockerfile:
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
