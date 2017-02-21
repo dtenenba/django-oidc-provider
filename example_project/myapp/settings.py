@@ -91,5 +91,6 @@ LOGIN_REDIRECT_URL = '/'
 
 # OIDC Provider settings
 
-SITE_URL = 'http://localhost:8000'
+# SITE_URL = 'http://localhost:8000'
+SITE_URL = 'https://openid.fhcrc.org'
 OIDC_SESSION_MANAGEMENT_ENABLE = True

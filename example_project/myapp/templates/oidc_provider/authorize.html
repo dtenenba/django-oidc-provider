@@ -5,6 +5,9 @@
 
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+
         <h2>{% trans 'Request for Permission' %}</h2>
         <p class="lead">Client <i>{{ client.name }}</i> would like to access this information of you.</p>
         <form method="post" action="{% url 'oidc_provider:authorize' %}">

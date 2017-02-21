@@ -8,6 +8,9 @@
         <form method="post" action="{% url 'login' %}">
             {% csrf_token %}
             <input type="hidden" name="next" value="{{ next }}">
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>Please log in with your HutchNet ID and password.</p>
             {% if form.errors %}
             <div class="alert alert-danger" role="alert">
                 {% trans 'Your username and password didn\'t match. Please try again.' %}
