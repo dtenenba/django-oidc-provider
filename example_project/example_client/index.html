@@ -1,3 +1,9 @@
+<!--
+in python3,
+start me like this:  python -m http.server 3000 --bind 0.0.0.0
+(strictly speaking, the --bind 0.0.0.0 is not necessary)
+be sure the client_id (line 25 is filled out correctly)
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,13 +24,13 @@
     <script type="text/javascript">
     $(function() {
         var clientInfo = {
-            client_id : '',
-            redirect_uri : 'http://localhost:3000'
+            client_id : '099588', // TODO FILL THIS IN!
+            redirect_uri : 'http://140.107.73.85:3000' // TODO make sure this is correct
         };
 
         OIDC.setClientInfo(clientInfo);
 
-        var providerInfo = OIDC.discover('http://localhost:8000');
+        var providerInfo = OIDC.discover('https://openid.fhcrc.org');
 
         OIDC.setProviderInfo(providerInfo);
         OIDC.storeInfo(providerInfo, clientInfo);
@@ -37,7 +43,7 @@
 
         // Make userinfo request using access_token.
         if (token !== null) {
-            $.get('http://localhost:8000/userinfo/?access_token='+token, function( data ) {
+            $.get('https://openid.fhcrc.org/userinfo/?access_token='+token, function( data ) {
                 alert('USERINFO: '+ JSON.stringify(data));
             });
         }
