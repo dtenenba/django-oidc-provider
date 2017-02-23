@@ -1,7 +1,6 @@
 # import the User object
 from django.contrib.auth.models import User
 import myapp.ldap_auth
-import time
 
 # Name my backend 'MyCustomBackend'
 class MyCustomBackend:
