@@ -90,7 +90,7 @@ RUN sed -i.bak -r "s#/etc/ssl/certs/ssl-cert-snakeoil.pem#/etc/ssl/certs/2b497ff
 
 RUN sed -i.bak -r "s#/etc/ssl/private/ssl-cert-snakeoil.key#/etc/ssl/private/fhcrc.org.key#" default-ssl.conf
 
-RUN sed -i.bak -r "s@#SSLCertificateChainFile /etc/apache2/ssl.crt/server-ca.crt@SSLCertificateChainFile /etc/ssl/certs/2b497ffb67edc8.crt@" default-ssl.conf
+RUN sed -i.bak -r "s@#SSLCertificateChainFile /etc/apache2/ssl.crt/server-ca.crt@SSLCertificateChainFile /etc/ssl/certs/gd_bundle-g2-g1.crt@" default-ssl.conf
 
 # now we have apache + ssl running but no wsgi yet
 
